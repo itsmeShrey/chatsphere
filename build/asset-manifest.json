@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8fa7fb7a.css",
+    "main.js": "/static/js/main.5b6e81db.js",
+    "static/media/chatgram.jpg": "/static/media/chatgram.3c121a07217dcce9ec2c.jpg",
+    "index.html": "/index.html",
+    "main.8fa7fb7a.css.map": "/static/css/main.8fa7fb7a.css.map",
+    "main.5b6e81db.js.map": "/static/js/main.5b6e81db.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8fa7fb7a.css",
+    "static/js/main.5b6e81db.js"
+  ]
+}
