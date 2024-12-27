@@ -1,0 +1,119 @@
+/* Common Message Styles */
+
+.message {
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin: 5px 0;
+    display: inline-block;
+    max-width: 70%;
+    word-wrap: break-word;
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0;
+    animation: fadeInMessage 0.5s forwards;
+}
+
+
+/* Light Theme Message */
+
+.message.light {
+    background-color: #e6f7ff;
+    color: #000;
+    align-self: flex-end;
+    animation: slideInRight 0.5s ease-out;
+}
+
+
+/* Dark Theme Message */
+
+.message.dark {
+    background-color: #444;
+    color: #fff;
+    align-self: flex-end;
+    animation: slideInRight 0.5s ease-out;
+}
+
+
+/* Received Messages Styles */
+
+.message.received {
+    background-color: #f1f0f0;
+    color: #000;
+    align-self: flex-start;
+    animation: slideInLeft 0.5s ease-out;
+}
+
+.message.received.dark {
+    background-color: #333;
+    color: #fff;
+    align-self: flex-start;
+    animation: slideInLeft 0.5s ease-out;
+}
+
+
+/* Animations for Messages */
+
+
+/* Slide In Right (for sent messages) */
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+/* Slide In Left (for received messages) */
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+/* Fade In for Messages (default effect when message enters) */
+
+@keyframes fadeInMessage {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Responsive Design */
+
+
+/* Adjust message container on smaller screens */
+
+@media (max-width: 768px) {
+    .message {
+        max-width: 85%;
+        /* Slightly wider on tablets */
+        font-size: 16px;
+    }
+}
+
+
+/* Adjust message container on very small screens */
+
+@media (max-width: 480px) {
+    .message {
+        max-width: 95%;
+        /* Even wider on phones */
+        font-size: 14px;
+    }
+}

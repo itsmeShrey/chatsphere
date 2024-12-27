@@ -1,0 +1,257 @@
+/* General Chat Window Styles */
+
+.chat-window {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    background-color: #d6f0c7;
+    animation: fadeInUp 0.8s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.messages {
+    background-color: #e3ecdd;
+    padding: 10px;
+    border-radius: 8px;
+    overflow-y: auto;
+    max-height: 60vh;
+    transition: background-color 0.3s ease;
+    scroll-behavior: smooth;
+}
+
+
+/* Theme Toggling Animations */
+
+.theme-toggle button {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.theme-toggle button:hover {
+    transform: scale(1.1);
+    background-color: #cde6b6;
+}
+
+
+/* Chat Header Styles */
+
+.chat-header {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeInDown 0.5s ease;
+}
+
+.chat-header .contact-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+}
+
+.contact-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-left: 10px;
+}
+
+
+/* Call Buttons with Animation */
+
+.call-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.call-button {
+    background: #f0f0f0;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.call-button:hover {
+    background: #ddd;
+    transform: scale(1.2);
+}
+
+
+/* Messages Section */
+
+.messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 80vh;
+}
+
+
+/* Individual Message Styles */
+
+.message {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    max-width: 70%;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    animation: zoomIn 0.3s ease;
+}
+
+
+/* Sent and Received Messages */
+
+.message.sent {
+    background-color: #e1f7d5;
+    align-self: flex-end;
+    animation: slideInRight 0.4s ease-out;
+}
+
+.message.received {
+    background-color: #d6f0c7;
+    align-self: flex-start;
+    animation: slideInLeft 0.4s ease-out;
+}
+
+
+/* Style for No Messages and Select Contact */
+
+.no-messages,
+.select-contact {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin-top: 20px;
+}
+
+
+/* Message Content */
+
+.message p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.message span {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+}
+
+
+/* Animations */
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .chat-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .messages {
+        max-height: 70vh;
+        gap: 8px;
+    }
+    .message {
+        max-width: 90%;
+    }
+    .call-buttons {
+        gap: 5px;
+    }
+    .call-button {
+        width: 30px;
+        height: 30px;
+    }
+    .contact-name {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-header {
+        padding: 5px 10px;
+    }
+    .message {
+        font-size: 14px;
+    }
+    .messages {
+        max-height: 60vh;
+        padding: 5px;
+    }
+}

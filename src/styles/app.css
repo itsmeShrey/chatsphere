@@ -1,0 +1,179 @@
+/* General styles for the app */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* Full viewport height */
+    background-color: #f0f2f5;
+}
+
+.content {
+    display: flex;
+    flex: 1;
+    /* Take the remaining space below the header */
+}
+
+.contact-list {
+    flex: 1;
+    /* 1/3 of the space */
+    max-width: 300px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    border-right: 1px solid #ddd;
+}
+
+.chat-window {
+    flex: 2;
+    /* 2/3 of the space */
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    background-color: #ece5dd;
+}
+
+@media (max-width: 768px) {
+    .app {
+        flex-direction: column;
+    }
+    .contact-list {
+        max-width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+    .chat-window {
+        flex: 1;
+        max-width: 100%;
+    }
+}
+
+
+/* Common Theme Styles */
+
+body.light {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.dark {
+    background-color: #000000;
+    color: #000000;
+}
+
+
+/* Chat Window Specific Styles */
+
+.chat-window.light {
+    background-color: #d7d7d7;
+    /* Updated background color for light mode */
+    color: #000;
+    /* Text color for light mode */
+}
+
+.chat-window.dark {
+    background-color: #222;
+    /* Background color for dark mode */
+    color: black;
+    /* Text color for dark mode */
+}
+
+
+/* Contact List and Message Styles */
+
+.contact-item {
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contact-item.light {
+    background-color: #fff;
+    color: #000;
+    /* Text color for light mode */
+}
+
+.contact-item.dark {
+    background-color: #333;
+    color: #fff;
+    /* Text color for dark mode */
+}
+
+
+/* Common Message Styles */
+
+.message {
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin: 5px 0;
+    display: inline-block;
+    max-width: 70%;
+    word-wrap: break-word;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* Light Theme Message */
+
+.message.light {
+    background-color: #e6f7ff;
+    /* Light blue bubble for sent messages */
+    color: #000;
+    /* Black text */
+    align-self: flex-end;
+    /* Align sent messages to the right */
+}
+
+
+/* Dark Theme Message */
+
+.message.dark {
+    background-color: #444;
+    /* Dark gray bubble for sent messages */
+    color: #000;
+    /* Set text color to black */
+    align-self: flex-end;
+    /* Align sent messages to the right */
+}
+
+
+/* Received Messages Styles */
+
+.message.received {
+    background-color: #f1f0f0;
+    /* Light gray for received messages (light theme) */
+    color: #000;
+    /* Black text */
+    align-self: flex-start;
+    /* Align received messages to the left */
+}
+
+.message.received.dark {
+    background-color: #333;
+    /* Darker gray for received messages (dark theme) */
+    color: #000;
+    /* Set text color to black */
+    align-self: flex-start;
+    /* Align received messages to the left */
+}
+
+
+/* Contact List Header */
+
+.contact-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.theme-toggle {
+    cursor: pointer;
+}
